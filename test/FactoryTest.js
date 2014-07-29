@@ -24,8 +24,7 @@ describe('FactoryTest', function() {
       // Check if the instance of the service is correct
       service.should.be.instanceOf(EventService);
 
-      // The service should have a tenant
-
+      // TODO: Add more tests for caching by tenant.
 
       done();
 
