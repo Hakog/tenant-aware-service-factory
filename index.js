@@ -4,7 +4,4 @@ var Factory = require('./lib/Factory'),
     TenantAwareService = require('./lib/Factory');
 
 // export single instance of the factory
-module.exports.Factory = new Factory();
-
-// export the function from which all services should extend
-module.exports.TenantAwareService = TenantAwareService;
+module.exports = new Factory();
