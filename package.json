@@ -2,7 +2,8 @@
   "name": "tenant-aware-service-factory",
   "version": "0.0.1",
   "dependencies": {
-    "node-cache": "^1.0.0"
+    "node-cache": "^1.0.0",
+    "ta-utils": "0.0.1"
   },
   "devDependencies": {
     "mocha": "^1.18.2",

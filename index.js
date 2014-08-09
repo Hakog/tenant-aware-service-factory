@@ -1,7 +1,7 @@
 'use strict';
 
 var Factory = require('./lib/Factory'),
-    TenantAwareService = require('./lib/TenantAwareService');
+    TenantAwareService = require('./lib/Factory');
 
 // export single instance of the factory
 module.exports.Factory = new Factory();
