@@ -12,7 +12,7 @@
     "grunt": "^0.4.4",
     "grunt-mocha-test": "^0.10.2"
   },
-  "localDependencies": {
+  "linkDependencies": {
     "ta-utils": "0.0.1"
   },
   "scripts": {
