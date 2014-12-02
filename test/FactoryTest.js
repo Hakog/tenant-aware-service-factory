@@ -1,33 +1,35 @@
 'use strict';
 
 var should = require('should'),
-    EventService = require('event-service'),
-    Factory = require('../lib/Factory');
+    Factory = require('../lib/Factory'),
+    TestService = require('./TestService');
 
 describe('FactoryTest', function() {
   describe('#getInstance', function() {
-    var tenant = null;
+    var factory = new Factory(),
+        tenant = {
+            _id: '123'
+        };
 
-    before(function() {
-      // Create a fake tenant
-      tenant = {};
-      tenant._id = '123';
+    before(function(done) {
+      factory.registerService('testservice', TestService);
+      done();
     });
 
     it('should return an instance of the requested service', function(done) {
-      var factory = new Factory(),
-          service = factory.getInstance(factory.EVENT_SERVICE, tenant);
+       var testServiceInstance = factory.getInstance('testservice', tenant),
+           testServiceTenant = testServiceInstance.getTenant();
 
       // Check if the service is created
-      should.exist(service);
+      should.exist(testServiceInstance);
+
+      // Tenant should exist
+      should.exist(testServiceTenant);
 
       // Check if the instance of the service is correct
-      service.should.be.instanceOf(EventService);
-
-      // TODO: Add more tests for caching by tenant.
+      testServiceInstance.should.be.instanceOf(TestService);
 
       done();
-
     });
   });
 });
