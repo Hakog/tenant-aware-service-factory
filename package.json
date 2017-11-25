@@ -1,6 +1,6 @@
 {
-  "name": "tenant-aware-service-factory",
-  "version": "0.0.1",
+  "name": "@ticketapply/tenant-aware-service-factory",
+  "version": "1.0.0",
   "dependencies": {
     "node-cache": "^1.0.0"
   },
